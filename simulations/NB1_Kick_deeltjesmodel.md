@@ -272,9 +272,9 @@ for i in range(N):
     array = np.append(array,np.random.rand(1))
 
 eind = time.time()
-lengte = eind - start
+lengte_1 = eind - start
 
-print("Dit kostte ", lengte, "seconde!")
+print("Dit kostte ", lengte_1, "seconde!")
 ```
 
 Idealiter draaien we de bovenstaande code een aantal keer zodat we een goede schatting hebben van de rekentijd.
@@ -297,7 +297,25 @@ De runtime is {eval}`<naam variabele>` korter.
 ```
 
 ```python
+import time
+import numpy as np
 
+start = time.time()
+
+array = np.array([])
+
+array = np.append(array,np.random.rand(1,int(1e5)))
+
+eind = time.time()
+lengte_2 = eind - start
+print
+
+print("Dit kostte ", lengte_2, "seconde!")
+```
+
+```python
+lengte = lengte_1 - lengte_2
+print(lengte)
 ```
 
 ## Aan de slag met deeltjes
